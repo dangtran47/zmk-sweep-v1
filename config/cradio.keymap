@@ -21,51 +21,49 @@
 
 // -----------------
 
-&mt {
-    //  flavor = "tap-preferred";
-    // tapping_term_ms = <200>;
-};
-
-&sk { ignore-modifiers; };
-
 / {
     macros {
         // sometimes my device thinks a modifier is being held down
         // pressing all modifiers fixes it.
-
-        unstick: unstick {
-            label = "ZM_unstick";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LSHIFT &kp RSHIFT &kp LCTRL &kp RCTRL &kp LALT &kp RALT &kp LGUI &kp RGUI>;
-        };
     };
 
     combos {
         compatible = "zmk,combos";
 
         // both right thumb keys
-
-        combo_accent {
-            timeout-ms = <300>;
-            key-positions = <32 33>;
-            bindings = <&mo ACCENT>;
-        };
-
         // internal-left & external-right thumb keys
-
-        combo_sym2 {
-            timeout-ms = <200>;
-            key-positions = <31 33>;
-            bindings = <&mo SYM2>;
-        };
-
         // both left thumb keys
 
-        combo_settings {
-            timeout-ms = <300>;
-            key-positions = <30 31>;
-            bindings = <&mo SETTINGS>;
+        del {
+            bindings = <&kp DEL>;
+            key-positions = <8 9>;
+        };
+
+        single_quote {
+            bindings = <&kp SQT>;
+            key-positions = <18 19>;
+        };
+
+        double_quote {
+            bindings = <&kp DOUBLE_QUOTES>;
+            key-positions = <28 29>;
+        };
+
+        esc {
+            bindings = <&kp ESC>;
+            key-positions = <0 1>;
+        };
+
+        word_delete {
+            bindings = <&kp LA(DEL)>;
+            key-positions = <8 9>;
+            layers = <1>;
+        };
+
+        word_forward_del {
+            bindings = <&kp LS(LA(DEL))>;
+            key-positions = <18 19>;
+            layers = <1>;
         };
     };
 
@@ -76,10 +74,10 @@
 
         default_layer {
             bindings = <
-&kp Q  &kp W  &kp E  &kp R       &kp T               &kp Y      &kp U    &kp I      &kp O    &kp P
-&kp A  &kp S  &kp D  &mt LGUI H  &kp G               &kp H      &kp J    &kp K      &kp L    &kp IT_OGRV
-&kp Z  &kp X  &kp C  &kp V       &kp B               &kp N      &kp M    &kp COMMA  &kp DOT  &kp IT_UGRV
-                     &mo EXT     &mt LSHIFT SPACE    &kp SPACE  &sl SYM
+&kp Q        &kp W           &kp E             &kp R       &kp T    &kp Y      &kp U            &kp I              &kp O            &kp P
+&mt LCTRL A  &mt LEFT_ALT S  &mt LEFT_SHIFT D  &mt LGUI H  &kp G    &kp H      &mt RIGHT_GUI J  &mt RIGHT_SHIFT K  &mt RIGHT_ALT L  &mt RCTRL SEMICOLON
+&kp Z        &kp X           &kp C             &kp V       &kp B    &kp N      &kp M            &kp COMMA          &kp DOT          &kp SLASH
+                                               &kp SPACE   &mo 2    &kp ENTER  &mo 1
             >;
         };
 
@@ -87,10 +85,10 @@
 
         sym_layer {
             bindings = <
-&kp N1        &kp N2       &kp N3       &kp N4       &kp N5         &kp N6      &kp N7       &kp N8        &kp N9        &kp N0
-&kp IT_LESS   &kp IT_USD   &kp IT_LPAR  &kp IT_LBRC  &kp IT_LBKT    &kp IT_EQL  &kp IT_QUES  &kp IT_SQUOT  &kp IT_MINUS  &kp IT_AST
-&kp IT_GREAT  &kp IT_PERC  &kp IT_RPAR  &kp IT_RBRC  &kp IT_RBKT    &kp IT_AT   &kp IT_EXCL  &kp IT_DQUOT  &kp IT_PLUS   &kp IT_FSLH
-                                        &mo FNC      &mo SYM2       &trans      &trans
+&kp PERCENT   &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp AT_SIGN    &kp EXCLAMATION  &kp AMPERSAND  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp ASTERISK
+&kp CARET     &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp HASH       &kp MINUS        &kp EQUAL      &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp PIPE
+&kp NUMBER_0  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp DOLLAR     &kp UNDERSCORE   &kp PLUS       &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp NON_US_BACKSLASH
+                                          &trans        &trans         &trans           &trans
             >;
         };
 
@@ -98,10 +96,10 @@
 
         ext_layer {
             bindings = <
-&kp ESC    &trans     &trans      &trans     &trans       &kp PG_UP     &kp HOME  &kp UP    &kp END    &kp CAPS
-&sk LALT   &sk LGUI   &sk LSHIFT  &sk LCTRL  &kp RALT     &kp PG_DN     &kp LEFT  &kp DOWN  &kp RIGHT  &kp DEL
-&kp LC(Z)  &kp LC(X)  &kp LC(C)   &kp TAB    &kp LC(V)    &kp LC(BSPC)  &kp BSPC  &trans    &trans     &trans
-                                  &trans     &kp LCTRL    &kp ENTER     &mo FNC
+&kp ESC        &kp LG(GRAVE)  &kp LG(LS(TAB))  &kp LG(TAB)  &trans    &trans          &trans          &trans        &trans     &trans
+&kp TAB        &kp LC(TAB)    &trans           &trans       &trans    &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT  &trans
+&kp LG(LC(Q))  &trans         &trans           &trans       &trans    &trans          &trans          &trans        &trans     &trans
+                                               &trans       &trans    &trans          &mo FNC
             >;
         };
 
@@ -109,10 +107,10 @@
 
         fnc_layer {
             bindings = <
-&kp F1    &kp F2    &kp F3      &kp F4     &kp F5      &kp F6   &kp F7   &kp F8           &kp F9  &kp F10
-&sk LALT  &sk LGUI  &sk LSHIFT  &sk LCTRL  &kp RALT    &kp F11  &kp F12  &kp PRINTSCREEN  &trans  &trans
-&none     &none     &none       &none      &none       &none    &none    &none            &none   &none
-                                &none      &none       &none    &none
+&kp F1  &kp F2   &kp F3   &kp F4   &trans    &trans  &kp C_PAUSE           &kp C_PREV            &kp C_NEXT  &trans
+&kp F5  &kp F6   &kp F7   &kp F9   &trans    &trans  &kp C_VOLUME_DOWN     &kp C_VOLUME_UP       &kp K_MUTE  &trans
+&kp F9  &kp F10  &kp F11  &kp F12  &none     &none   &kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_INC  &kp CAPS    &none
+                          &none    &none     &none   &none
             >;
         };
 
