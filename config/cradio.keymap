@@ -34,36 +34,43 @@
         // internal-left & external-right thumb keys
         // both left thumb keys
 
-        del {
-            bindings = <&kp DEL>;
-            key-positions = <8 9>;
-        };
-
         single_quote {
             bindings = <&kp SQT>;
             key-positions = <18 19>;
+            layers = <0>;
         };
 
         double_quote {
             bindings = <&kp DOUBLE_QUOTES>;
             key-positions = <28 29>;
+            layers = <0>;
         };
 
         esc {
             bindings = <&kp ESC>;
             key-positions = <0 1>;
+            layers = <0>;
         };
 
         word_delete {
             bindings = <&kp LA(DEL)>;
             key-positions = <8 9>;
-            layers = <1>;
+            layers = <0>;
         };
 
         word_forward_del {
             bindings = <&kp LS(LA(DEL))>;
-            key-positions = <18 19>;
+            key-positions = <8 9>;
             layers = <1>;
+        };
+    };
+
+    behaviors {
+        semicolon_quote: semicolon_quote {
+            compatible = "zmk,behavior-tap-dance";
+            label = "SEMICOLON_QUOTE";
+            #binding-cells = <0>;
+            bindings = <&kp SEMICOLON>, <&kp SQT>;
         };
     };
 
@@ -74,10 +81,10 @@
 
         default_layer {
             bindings = <
-&kp Q        &kp W           &kp E             &kp R       &kp T    &kp Y      &kp U            &kp I              &kp O            &kp P
-&mt LCTRL A  &mt LEFT_ALT S  &mt LEFT_SHIFT D  &mt LGUI H  &kp G    &kp H      &mt RIGHT_GUI J  &mt RIGHT_SHIFT K  &mt RIGHT_ALT L  &mt RCTRL SEMICOLON
-&kp Z        &kp X           &kp C             &kp V       &kp B    &kp N      &kp M            &kp COMMA          &kp DOT          &kp SLASH
-                                               &kp SPACE   &mo 2    &kp ENTER  &mo 1
+&kp Q        &kp W           &kp E             &kp R       &kp T        &kp Y      &kp U            &kp I              &kp O            &kp P
+&mt LCTRL A  &mt LEFT_ALT S  &mt LEFT_SHIFT D  &mt LGUI H  &kp G        &kp H      &mt RIGHT_GUI J  &mt RIGHT_SHIFT K  &mt RIGHT_ALT L  &mt RCTRL SEMICOLON
+&kp Z        &kp X           &kp C             &kp V       &kp B        &kp N      &kp M            &kp COMMA          &kp DOT          &kp SLASH
+                                               &kp SPACE   &lt 2 TAB    &kp ENTER  &lt 1 DEL
             >;
         };
 
@@ -97,7 +104,7 @@
         ext_layer {
             bindings = <
 &kp ESC        &kp LG(GRAVE)  &kp LG(LS(TAB))  &kp LG(TAB)  &trans    &trans          &trans          &trans        &trans     &trans
-&kp TAB        &kp LC(TAB)    &trans           &trans       &trans    &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT  &trans
+&kp GRAVE      &kp TILDE      &trans           &trans       &trans    &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT  &trans
 &kp LG(LC(Q))  &trans         &trans           &trans       &trans    &trans          &trans          &trans        &trans     &trans
                                                &trans       &trans    &trans          &mo FNC
             >;
