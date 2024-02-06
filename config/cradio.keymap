@@ -21,6 +21,8 @@
 
 // -----------------
 
+&mt { flavor = "tap-preferred"; };
+
 / {
     macros {
         // sometimes my device thinks a modifier is being held down
