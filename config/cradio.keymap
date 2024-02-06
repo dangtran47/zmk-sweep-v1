@@ -21,7 +21,7 @@
 
 // -----------------
 
-&mt { flavor = "tap-unless-interrupted"; };
+&mt { flavor = "tap-preferred"; };
 
 / {
     macros {
