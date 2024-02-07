@@ -50,7 +50,7 @@
 
         esc {
             bindings = <&kp ESC>;
-            key-positions = <2 3>;
+            key-positions = <12 13>;
             layers = <0>;
         };
 
@@ -73,7 +73,7 @@
 
         grave {
             bindings = <&kp GRAVE>;
-            key-positions = <12 13>;
+            key-positions = <2 3>;
         };
 
         caps_words {
