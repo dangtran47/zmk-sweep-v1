@@ -89,6 +89,28 @@
             #binding-cells = <0>;
             bindings = <&kp SEMICOLON>, <&kp SQT>;
         };
+
+        left_hold_tap: left_hold_tap {
+            compatible = "zmk,behavior-hold-tap";
+            label = "LEFT_HOLD_TAP";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            flavor = "tap-preferred";
+            hold-trigger-key-positions = <5 15 25 26 27 28 29 18 17 16 7 6 8 9 19 32 33>;
+        };
+
+        right_hold_tap: right_hold_tap {
+            compatible = "zmk,behavior-hold-tap";
+            label = "RIGHT_HOLD_TAP";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            flavor = "tap-preferred";
+            hold-trigger-key-positions = <0 10 20 21 11 1 2 12 22 23 13 3 4 14 24 31 30>;
+        };
     };
 
     keymap {
@@ -98,10 +120,10 @@
 
         default_layer {
             bindings = <
-&kp Q        &kp W           &kp E             &kp R       &kp T        &kp Y        &kp U            &kp I              &kp O            &kp P
-&mt LCTRL A  &mt LEFT_ALT S  &mt LEFT_SHIFT D  &mt LGUI F  &kp G        &kp H        &mt RIGHT_GUI J  &mt RIGHT_SHIFT K  &mt RIGHT_ALT L  &mt RCTRL SEMICOLON
-&kp Z        &kp X           &kp C             &kp V       &kp B        &kp N        &kp M            &kp COMMA          &kp DOT          &kp SLASH
-                                               &lt 2 TAB   &kp SPACE    &lt 1 ENTER  &kp BACKSPACE
+&kp Q                   &kp W                      &kp E                        &kp R                      &kp T        &kp Y        &kp U                        &kp I                          &kp O                        &kp P
+&left_hold_tap LCTRL A  &left_hold_tap LEFT_ALT S  &left_hold_tap LEFT_SHIFT D  &left_hold_tap LEFT_GUI F  &kp G        &kp H        &right_hold_tap RIGHT_GUI J  &right_hold_tap RIGHT_SHIFT K  &right_hold_tap RIGHT_ALT L  &right_hold_tap RCTRL SEMICOLON
+&kp Z                   &kp X                      &kp C                        &kp V                      &kp B        &kp N        &kp M                        &kp COMMA                      &kp DOT                      &kp SLASH
+                                                                                &lt 2 TAB                  &kp SPACE    &lt 1 ENTER  &kp BACKSPACE
             >;
         };
 
