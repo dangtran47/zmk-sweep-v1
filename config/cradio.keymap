@@ -50,13 +50,7 @@
 
         esc {
             bindings = <&kp ESC>;
-            key-positions = <1 2>;
-            layers = <0>;
-        };
-
-        word_delete {
-            bindings = <&kp LA(BACKSPACE)>;
-            key-positions = <7 8>;
+            key-positions = <11 12>;
             layers = <0>;
         };
 
