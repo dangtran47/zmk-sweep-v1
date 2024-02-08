@@ -50,7 +50,7 @@
 
         esc {
             bindings = <&kp ESC>;
-            key-positions = <12 13>;
+            key-positions = <1 2>;
             layers = <0>;
         };
 
@@ -68,12 +68,12 @@
 
         tilde {
             bindings = <&kp TILDE>;
-            key-positions = <22 23>;
+            key-positions = <3 2>;
         };
 
         grave {
             bindings = <&kp GRAVE>;
-            key-positions = <2 3>;
+            key-positions = <12 13>;
         };
 
         caps_words {
