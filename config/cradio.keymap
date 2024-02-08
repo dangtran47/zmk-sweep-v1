@@ -44,7 +44,7 @@
 
         double_quote {
             bindings = <&kp DOUBLE_QUOTES>;
-            key-positions = <27 26>;
+            key-positions = <6 7>;
             layers = <0>;
         };
 
@@ -56,13 +56,13 @@
 
         word_delete {
             bindings = <&kp LA(BACKSPACE)>;
-            key-positions = <6 7>;
+            key-positions = <7 8>;
             layers = <0>;
         };
 
         word_forward_del {
             bindings = <&kp LA(DEL)>;
-            key-positions = <6 7>;
+            key-positions = <7 8>;
             layers = <1>;
         };
 
