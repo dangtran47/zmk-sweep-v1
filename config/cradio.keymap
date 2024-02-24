@@ -143,10 +143,10 @@
 
         ext_layer {
             bindings = <
-&kp ESC  &trans    &kp UP    &trans     &trans    &trans          &trans          &trans        &trans     &trans
-&trans   &kp LEFT  &kp DOWN  &kp RIGHT  &trans    &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT  &trans
-&trans   &trans    &trans    &trans     &trans    &trans          &trans          &trans        &trans     &trans
-                             &trans     &trans    &kp ENTER       &mo 3
+&kp ESC    &trans     &kp UP     &trans     &trans    &trans          &trans          &trans        &trans     &trans
+&trans     &kp LEFT   &kp DOWN   &kp RIGHT  &trans    &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT  &trans
+&kp LG(Z)  &kp LG(X)  &kp LG(C)  &kp LG(V)  &trans    &trans          &trans          &trans        &trans     &trans
+                                 &trans     &trans    &kp ENTER       &mo 3
             >;
         };
 
