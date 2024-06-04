@@ -134,7 +134,7 @@
             bindings = <
 &kp PERCENT   &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp AT_SIGN    &kp EXCLAMATION  &kp AMPERSAND  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp ASTERISK
 &kp NUMBER_0  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp HASH       &kp MINUS        &kp EQUAL      &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp PIPE
-&kp CARET     &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp DOLLAR     &kp UNDERSCORE   &kp PLUS       &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp NUBS
+&kp CARET     &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp DOLLAR     &kp UNDERSCORE   &kp PLUS       &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp BACKSLASH
                                           &trans        &trans         &trans           &trans
             >;
         };
